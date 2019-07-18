@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from rest_framework import viewsets, mixins, generics
-from .models import Survey, Category, Question, Answers, Questionaire
+from .models import Survey, Category, Answers, Questionaire
 from .serializers import (SurveySerializer, CategorySerializer, QuestionSerializer,
                  AnswersSerializer, QuestionaireSerializer)
 
@@ -17,14 +17,10 @@ class CategoryView(viewsets.ModelViewSet):
     serializer_class = CategorySerializer
 
 
-class QuestionView(viewsets.ModelViewSet):
-    queryset = Question.objects.all()
-    serializer_class = QuestionSerializer
+# class QuestionView(viewsets.ModelViewSet):
+#     queryset = Question.objects.all()
+#     serializer_class = QuestionSerializer
 
-
-class AnswersView(viewsets.ModelViewSet):
-    queryset = Answers.objects.all()
-    serializer_class = AnswersSerializer
 
 
 class AnswersView(viewsets.ModelViewSet):

@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from .models import Survey
 from .models import Category
-from .models import Question, Answers, Questionaire
+from .models import Answers, Questionaire
 
 
 class SurveySerializer(serializers.HyperlinkedModelSerializer):
@@ -27,7 +27,7 @@ class QuestionSerializer(serializers.HyperlinkedModelSerializer):
 class AnswersSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Answers
-        fields = ('id', 'url', 'answer', 'question')
+        fields = ('id', 'url', 'school', 'answer', 'questionId')
 
 class QuestionaireSerializer(serializers.HyperlinkedModelSerializer):
 

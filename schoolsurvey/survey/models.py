@@ -1,5 +1,6 @@
 from django.contrib.postgres.fields import JSONField
 from django.db import models
+from users.models import School
 
 # Create your models here.
 
@@ -10,6 +11,10 @@ class Survey(models.Model):
 
     def __str__(self):
         return self.name
+
+    #VSCode will see the objects declared
+    objects = models.Manager()
+    
 
 
 class Category(models.Model):
@@ -25,29 +30,30 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+    #VSCode will see the objects declared
+    objects = models.Manager()
+    
 
-class Question(models.Model):
-    title = models.CharField(max_length=300)
-    help = models.CharField(max_length=250)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return self.title
 
 
 class Answers(models.Model):
+    school = models.ForeignKey(School, related_name='answers', on_delete=models.CASCADE)
+    questionId = models.CharField(max_length=250)
     answer = models.CharField(max_length=300)
-    question = models.ForeignKey(Question, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.answer
 
+    #VSCode will see the objects declared
+    objects = models.Manager()
+    
+
 class Questionaire(models.Model):
-    title = models.CharField(max_length=300)
-    showprogressbar = models.CharField(max_length=50)
+    category = models.ForeignKey(Category, related_name='questionaire', on_delete=models.CASCADE)
     pages = JSONField()
 
-    def __str__(self):
-        return self.title
+    #VSCode will see the objects declared
+    objects = models.Manager()
+    
 
     
