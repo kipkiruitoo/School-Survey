@@ -9,6 +9,7 @@ router.register('surveys', views.SurveyView)
 router.register('categories', views.CategoryView)
 router.register('question', views.QuestionView)
 router.register('answers', views.AnswersView)
+router.register('questionaires', views.QuestionaireView)
 
 urlpatterns = [
 

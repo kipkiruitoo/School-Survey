@@ -1,3 +1,4 @@
+from django.contrib.postgres.fields import JSONField
 from django.db import models
 
 # Create your models here.
@@ -40,3 +41,13 @@ class Answers(models.Model):
 
     def __str__(self):
         return self.answer
+
+class Questionaire(models.Model):
+    title = models.CharField(max_length=300)
+    showprogressbar = models.CharField(max_length=50)
+    pages = JSONField()
+
+    def __str__(self):
+        return self.title
+
+    

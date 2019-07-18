@@ -1,7 +1,8 @@
 from django.shortcuts import render
-from rest_framework import viewsets
-from .models import Survey, Category, Question, Answers
-from .serializers import SurveySerializer, CategorySerializer, QuestionSerializer, AnswersSerializer
+from rest_framework import viewsets, mixins
+from .models import Survey, Category, Question, Answers, Questionaire
+from .serializers import (SurveySerializer, CategorySerializer, QuestionSerializer,
+                 AnswersSerializer, QuestionaireSerializer)
 
 # Create your views here.
 
@@ -24,3 +25,14 @@ class QuestionView(viewsets.ModelViewSet):
 class AnswersView(viewsets.ModelViewSet):
     queryset = Answers.objects.all()
     serializer_class = AnswersSerializer
+
+
+class AnswersView(viewsets.ModelViewSet):
+    queryset = Answers.objects.all()
+    serializer_class = AnswersSerializer
+
+class QuestionaireView(mixins.CreateModelMixin, mixins.ListModelMixin,
+                        mixins.RetrieveModelMixin, viewsets.GenericViewSet):
+                        
+    queryset = Questionaire.objects.all()
+    serializer_class = QuestionaireSerializer
