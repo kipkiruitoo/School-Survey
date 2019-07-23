@@ -1,6 +1,10 @@
 Django==1.11
+django-cors-headers==3.0.2
 django-rest-auth==0.9.5
 djangorestframework==3.8.2
-Pillow==6.0.0
-pytz==2019.1
+djangorestframework-jwt==1.11.0
+Pillow==6.1.0
+psycopg2==2.8.3
+PyJWT==1.7.1
+pytz==2018.9
 six==1.12.0

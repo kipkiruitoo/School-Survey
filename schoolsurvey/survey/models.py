@@ -1,6 +1,7 @@
 from django.contrib.postgres.fields import JSONField
+from django.contrib.postgres.fields import ArrayField
 from django.db import models
-from users.models import School
+from users.models import User
 
 # Create your models here.
 
@@ -37,7 +38,7 @@ class Category(models.Model):
 
 
 class Answers(models.Model):
-    school = models.ForeignKey(School, related_name='answers', on_delete=models.CASCADE)
+    school = models.ForeignKey(User, related_name='answers', on_delete=models.CASCADE)
     questionId = models.CharField(max_length=250)
     answer = models.CharField(max_length=300)
 
@@ -49,11 +50,11 @@ class Answers(models.Model):
     
 
 class Questionaire(models.Model):
-    category = models.ForeignKey(Category, related_name='questionaire', on_delete=models.CASCADE)
-    pages = JSONField()
+    # category = models.ForeignKey(Category, related_name='questionaire', on_delete=models.CASCADE)
+    pages =  ArrayField(models.CharField(max_length=10485758))
 
     #VSCode will see the objects declared
     objects = models.Manager()
     
-
+# ArrayField(models.CharField(max_length=10485758))
     

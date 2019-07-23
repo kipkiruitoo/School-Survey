@@ -17,11 +17,11 @@ class CategorySerializer(serializers.HyperlinkedModelSerializer):
                   'identifier', 'description', 'form_builder_json', 'custom_submit_url')
 
 
-class QuestionSerializer(serializers.HyperlinkedModelSerializer):
+# class QuestionSerializer(serializers.HyperlinkedModelSerializer):
 
-    class Meta:
-        model = Question
-        fields = ('id', 'url', 'title', 'help', 'category')
+#     class Meta:
+#         model = Question
+#         fields = ('id', 'url', 'title', 'help', 'category')
 
 
 class AnswersSerializer(serializers.HyperlinkedModelSerializer):
@@ -30,7 +30,8 @@ class AnswersSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('id', 'url', 'school', 'answer', 'questionId')
 
 class QuestionaireSerializer(serializers.HyperlinkedModelSerializer):
+    pages = serializers.JSONField() # change is here
 
     class Meta:
         model = Questionaire
-        fields = '__all__'
+        fields = ('pages',)

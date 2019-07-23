@@ -4,3 +4,4 @@ django-env/
 settings.json
 *.pyc
 migrations/
+venv/
