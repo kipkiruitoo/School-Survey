@@ -8,3 +8,4 @@ PyJWT==1.7.1
 pytz==2019.1
 six==1.12.0
 sqlparse==0.3.0
+django-cors-headers==3.0.2

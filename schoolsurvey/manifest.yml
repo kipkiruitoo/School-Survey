@@ -1,4 +1,5 @@
 applications:
- - name: schoolsurvey
+ - name: gptsbackend
    random-route: true
    memory: 128M
+   
