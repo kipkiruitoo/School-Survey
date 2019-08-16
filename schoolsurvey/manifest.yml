@@ -1,5 +1,8 @@
 applications:
- - name: gptsbackend
+ - path: .
    random-route: true
-   memory: 128M
+   memory: 512M
+   name: gptsbackend
+   command: python manage.py runserver
+   
    

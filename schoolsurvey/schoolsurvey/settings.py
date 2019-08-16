@@ -14,7 +14,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
@@ -25,7 +25,7 @@ SECRET_KEY = '!4we%h(naelm-f^$zn+sbys9)a-p-_xv%rgk9hnd8p6wjy&&*z'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.mybluemix.net']
 
 
 # Application definition
@@ -95,11 +95,11 @@ WSGI_APPLICATION = 'schoolsurvey.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'gpts',
-        'USER': 'postgres',
-        'HOST': 'localhost',
+        'NAME': 'unarkckr',
+        'USER': 'unarkckr',
+        'HOST': 'manny.db.elephantsql.com',
         'PORT': '5432',
-        'PASSWORD': 'database',
+        'PASSWORD': 'kZQ8czKR9H0wxZLj_nWaIlfbRj2PP_Hk',
 
 
     }
@@ -144,12 +144,9 @@ USE_TZ = True
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_URL = '/static/'
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, STATIC_URL.replace("/", ""))
 
 
 AUTH_USER_MODEL = 'users.User'
