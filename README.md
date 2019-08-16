@@ -2,6 +2,7 @@
 ##### manifest.yml
 ##### Procfile
 ##### runtime.txt
+##### run.sh
 
 #### Uploading the application to IBM Cloud
 
@@ -10,4 +11,4 @@
 ##### log on to ibm cloud. command: "ibmcloud login"
 ##### target you cloud foundry organization. command: "bx target --cf"
 ##### view apps running on you ibm cloud acc. command: "bx cf apps"
-##### push the app to ibm cloud. command "bx cf push"
+##### push the app to ibm cloud. command " bx cf push -c 'bash ./run.sh' "
