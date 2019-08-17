@@ -37,6 +37,7 @@ class AnswersView(viewsets.ModelViewSet):
     permission_classes = (permissions.AllowAny,)
     queryset = Answers.objects.all()
     serializer_class = AnswersSerializer
+    lookup_field = 'id'
 
 
 class QuestionaireView(viewsets.GenericViewSet, generics.RetrieveUpdateDestroyAPIView, generics.ListCreateAPIView):
