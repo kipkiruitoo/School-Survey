@@ -42,10 +42,12 @@ INSTALLED_APPS = [
     'survey',
     'rest_framework.authtoken',
     'rest_auth',
+    'django_rest_passwordreset',
     'users'
 
 ]
 
+DJANGO_REST_MULTITOKENAUTH_RESET_TOKEN_EXPIRY_TIME = 3
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -65,7 +67,7 @@ CORS_ORIGIN_ALLOW_ALL = True
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -109,20 +111,7 @@ DATABASES = {
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
-AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
-]
+AUTH_PASSWORD_VALIDATORS = []
 
 
 # Internationalization
@@ -164,3 +153,12 @@ REST_FRAMEWORK = {
 }
 
 REST_USE_JWT = True
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'gpts.pass@gmail.com'
+
+EMAIL_HOST_PASSWORD = 'attachment'
+
+EMAIL_USE_TLS = True
+# EMAIL_USE_SSL = True

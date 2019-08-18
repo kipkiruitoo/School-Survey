@@ -21,6 +21,7 @@ urlpatterns = [
     path('survey/', include('survey.urls')),
     path('admin/', admin.site.urls),
     path('api-token-auth/', obtain_jwt_token, name='create-token'),
-    re_path('api/', include('users.urls'))
-
+    re_path('api/', include('users.urls')),
+    path('api/password_reset/',
+         include('django_rest_passwordreset.urls', namespace='password_reset')),
 ]
