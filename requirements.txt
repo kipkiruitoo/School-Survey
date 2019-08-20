@@ -11,3 +11,4 @@ sqlparse==0.3.0
 django-cors-headers==3.0.2
 dj-static==0.0.6 
 gunicorn==19.1.1 
+django-rest-passwordreset==1.0.0
