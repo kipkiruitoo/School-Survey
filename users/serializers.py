@@ -29,7 +29,8 @@ class ProfileSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = UserProfile
-        fields = ('user', 'telephone',  'postaladdress', 'county')
+        fields = ('user', 'telephone',  'postaladdress',
+                  'county', 'subcounty', 'constituency', 'ward', 'school_gender', 'school_type', 'boys_pop', 'girls_pop', 'total_pop', 'teachers_pop',  'description', 'fb', 'twitter', 'website', 'other')
 
 
 class RoleSerializer(serializers.HyperlinkedModelSerializer):
