@@ -43,6 +43,8 @@ post_save.connect(add_to_default_group, sender=User)
 
 class UserProfile(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    name = models.CharField(max_length=255, blank=True)
+    role = models.CharField(max_length=255, blank=True)
     telephone = models.CharField(max_length=255, blank=True)
     postaladdress = models.CharField(max_length=255, blank=True)
     county = models.CharField(max_length=50, blank=True)
