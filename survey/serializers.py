@@ -23,6 +23,12 @@ class AnswersSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('id', 'school', 'answer', 'category')
 
 
+class AnSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Answers
+        fields = ('id', 'category', 'school', 'answer')
+
+
 class QuestionaireSerializer(serializers.ModelSerializer):
     pages = serializers.JSONField()  # change is here
 

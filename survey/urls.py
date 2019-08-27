@@ -13,6 +13,7 @@ router.register('categories', views.CategoryView)
 router.register('questionaires', views.QuestionaireView)
 # router.register('question', views.QuestionView)
 router.register('answers', views.AnswersView)
+router.register('an', views.AnsView)
 
 urlpatterns = [
 
