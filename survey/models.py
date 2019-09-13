@@ -21,7 +21,7 @@ class Survey(models.Model):
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=255)
     # survey = models.ForeignKey(Survey, on_delete=models.CASCADE)
     # visibility = models.CharField(max_length=255)
     # allows_edit = models.CharField(max_length=255)
