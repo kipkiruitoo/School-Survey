@@ -22,7 +22,8 @@ class User(AbstractUser):
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username']
 
-    
+    def __str__(self):
+        return self.id
 
 
 def add_to_default_group(sender, instance, **kwargs):
