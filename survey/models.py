@@ -1,7 +1,8 @@
 
-from django.contrib.postgres.fields import JSONField
+# from django.contrib.postgres.fields import JSONField
+from django_mysql.models import JSONField
 from django.contrib.postgres.fields import ArrayField
-from django.contrib.postgres.fields.jsonb import JSONField as JSONBField
+# from django.contrib.postgres.fields.jsonb import JSONField as JSONBField
 from django.db import models
 from users.models import User
 
@@ -46,7 +47,7 @@ class Answers(models.Model):
         User, related_name='answers', on_delete=models.CASCADE)
     category = models.ForeignKey(
         Category, related_name='answers', on_delete=models.CASCADE, default=DEFAULT_CATEGORY_ID)
-    answer = JSONBField(default=list, null=True, blank=True)
+    answer = JSONField(default=list, null=True, blank=True)
 
     def __str__(self):
         return self.answer
@@ -59,7 +60,7 @@ class Questionaire(models.Model):
     category = models.ForeignKey(Category, related_name='questionaire',
                                  on_delete=models.CASCADE, default=DEFAULT_CATEGORY_ID)
     # pages =  ArrayField(models.CharField(max_length=10485758))
-    pages = JSONBField(default=list, null=True, blank=True)
+    pages = JSONField(default=list, null=True, blank=True)
 
     # VSCode will see the objects declared
     objects = models.Manager()

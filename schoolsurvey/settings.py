@@ -96,12 +96,12 @@ WSGI_APPLICATION = 'schoolsurvey.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'unarkckr',
-        'USER': 'unarkckr',
-        'HOST': 'manny.db.elephantsql.com',
-        'PORT': '5432',
-        'PASSWORD': 'kZQ8czKR9H0wxZLj_nWaIlfbRj2PP_Hk',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'D6Ez48XXC2',
+        'USER': 'D6Ez48XXC2',
+        'HOST': 'remotemysql.com',
+        'PORT': '3306',
+        'PASSWORD': 'v09N1klUAE',
 
 
     }
