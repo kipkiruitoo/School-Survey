@@ -156,17 +156,17 @@ REST_USE_JWT = True
 
 # Doesn't work
 
-# EMAIL_HOST = 'smtp.gmail.com'
-# EMAIL_PORT = 587
-# EMAIL_HOST_USER = 'gpts.pass@gmail.com'
-
-# EMAIL_HOST_PASSWORD = 'attachment'
-
-EMAIL_HOST = 'smtp.aol.com'
+EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'surveyschool@aol.com'
+EMAIL_HOST_USER = 'gpts.pass@gmail.com'
 
-EMAIL_HOST_PASSWORD = 'Greatschools2020'
+EMAIL_HOST_PASSWORD = 'attachment'
+
+# EMAIL_HOST = 'smtp.aol.com'
+# EMAIL_PORT = 587
+# EMAIL_HOST_USER = 'surveyschool@aol.com'
+
+# EMAIL_HOST_PASSWORD = 'Greatschools2020'
 
 EMAIL_USE_TLS = True
 # EMAIL_USE_SSL = True
