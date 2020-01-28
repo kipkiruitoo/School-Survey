@@ -101,7 +101,7 @@ DATABASES = {
         'USER': 'D6Ez48XXC2',
         'HOST': 'remotemysql.com',
         'PORT': '3306',
-        'PASSWORD': 'oCCAvi8JgX',
+        'PASSWORD': 'RD1OXc9OwW',
 
 
     }
